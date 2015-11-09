@@ -10,7 +10,8 @@ var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 
 var externalLibs = [
-  "lodash"
+  "lodash",
+  "jquery"
 ];
 
 var customOpts ={
