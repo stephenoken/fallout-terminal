@@ -15,7 +15,7 @@ describe("Fallout Terminal", function () {
     var words = ["Ghost","Globe","Catch","Fists","Blast"];
     var newOptions = Terminal.processOptions(words[0],words,2);
     console.log(newOptions);
-    expect(newOptions.length).to.be.equal(4);
+    expect(newOptions.length).to.be.equal(2);
     newOptions = Terminal.processOptions(newOptions[0],newOptions,1);
     expect(newOptions.length).to.be.equal(1);
   });
