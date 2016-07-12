@@ -1,8 +1,11 @@
 #! /usr/bin/env python3
+# Intro
+print("Welocme to Fallout Hacker")
+print("Please Enter passwords, when finished enter `1`")
 passwords = []
 while (True):
     word = input().lower()
-    if word == "start":
+    if word == "1":
         break
     passwords.append(word)
 
@@ -10,8 +13,10 @@ while (True):
 def filterPasswords(correct_chars_num=0,word=passwords[0],words=passwords[1:]):
     if(len(words) == 0 or  correct_chars_num == -1):
         return word
-    result = list(filter(lambda w: sum(list(map(lambda i: 1 if word[i[0]] == i[1] else 0,enumerate(w)))) >= correct_chars_num,words))
+    result = list(filter(lambda w: sum(list(map(lambda i: 1 if word[i[0]] == i[1] else 0,enumerate(w)))) == correct_chars_num,words))
     print("Choose: " + result[0])
+    print("Remaining passwords: ")
+    print(result[1:])
     return filterPasswords(int(input("Likeness: ")),result[0],result[1:])
 
 def sum(arr = []):
